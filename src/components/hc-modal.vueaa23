@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:['modal ', ("" + (_vm.showModal ? 'd-flex' : 'd-none'))],attrs:{"id":"hc_modal"},on:{"click":function($event){$event.stopPropagation();return _vm.closeModal('overlay')}}},[_c('div',{class:['row modal__container',("bg-" + _vm.bgColor)],style:(("max-width: " + _vm.maxWidth + "px !important;")),on:{"click":function($event){$event.stopPropagation();return _vm.closeModal('content')}}},[_c('div',{staticClass:"col-12 p-0"},[_c('div',{staticClass:"row"},[_c('button',{staticClass:"modal__container--button bg-transparent position-absolute",staticStyle:{"right":"0px","z-index":"1"},on:{"click":function($event){$event.stopPropagation();return _vm.closeModal('button')}}},[_c('span',{staticClass:"hc--title-sm text-white close"},[_vm._v("×")])]),_vm._t("default")],2)])])])}
+var staticRenderFns = []
+
+export { render, staticRenderFns }
