@@ -374,7 +374,7 @@
 
             async paymentReference() {
 
-                if(this.amount == null || this.amount <= 0 || isNaN(this.amount)) {
+                if(this.amount == null || this.amount < 15 || isNaN(this.amount)) {
                     _Store.commit('setAlert', {
                         open: true,
                         message: 'Debes ingresar un monto a pagar válido. El monto mínimo es de $15 USD',

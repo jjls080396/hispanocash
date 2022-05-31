@@ -89,10 +89,28 @@ const routes = [
         name: 'terms',
         component: () => import('../views/Terms.vue')
     },
+    // {
+    //     path: '/qr/callback',
+    //     name: 'dashboard2',
+    //     component: () => import('../views/Qr.vue')
+        
+    // }
     {
         path: '/qr/callback',
-        name: 'dashboard2',
-        component: () => import('../views/Qr.vue')
+        name: 'dashboardPay',
+        component: () => import('../views/QrSA.vue')
+        
+    },
+    {
+        path: '/stripe/success_without_login',
+        name:'success_without_login',
+        /* eslint-disable */
+        redirect: to => {
+            // the function receives the target route as the argument
+            // we return a redirect path/location here.
+            return { name: 'dashboardPay', params: { make_payment: true } }
+        },
+        /* eslint-enable */
         
     }
 ]

@@ -2,7 +2,7 @@ module.exports = {
 	env: "prod",
 	server: {
 		local: {
-			page_url: 'http://localhost:8081/',
+			page_url: 'http://localhost:8080/',
 			api: 'https://test.hispanocash.com',
 			headers: {
 				'content-type': 'application/json',

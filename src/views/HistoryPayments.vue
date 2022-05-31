@@ -97,9 +97,12 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th class="py-4" scope="col">NO. DE REFERENCIA</th>
+                                                <th class="py-4" scope="col">CONTRATO</th>
                                                 <th class="py-4" scope="col">MONTO (DÓLARES)</th>
+                                                <th class="py-4" scope="col">MONTO (PESOS MEXICANOS)</th>
                                                 <th class="py-4" scope="col">FECHA DE PAGO</th>
                                                 <th class="py-4" scope="col">MÉTODO DE PAGO</th>
+                                                <th class="py-4" scope="col">FOLIO</th>
                                             </tr>
                                         </thead>
 
@@ -109,13 +112,22 @@
                                                     {{ (row.reference_id) ? row.reference_id : '-' }}
                                                 </th>
                                                 <td class="align-middle" v-if="row.status == 'COMPLETED'">
+                                                    {{ row.soft_descriptor.replace('Abono a contrato ','') }}
+                                                </td>
+                                                <td class="align-middle" v-if="row.status == 'COMPLETED'">
                                                     ${{ row.amount_value }}
+                                                </td>
+                                                <td class="align-middle" v-if="row.status == 'COMPLETED'">
+                                                    ${{ row.amount_value_mx.toFixed(2) }}
                                                 </td>
                                                 <td class="align-middle" v-if="row.status == 'COMPLETED'">
                                                     {{ row.create_time }}
                                                 </td>
                                                 <td class="align-middle" v-if="row.status == 'COMPLETED'">
                                                     {{ row.payment_platform }}
+                                                </td>
+                                                <td class="align-middle" v-if="row.status == 'COMPLETED'">
+                                                    {{ row.folio.toString().padStart(8, '0') }}
                                                 </td>
                                             </tr>
                                         </tbody>

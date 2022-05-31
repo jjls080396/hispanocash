@@ -132,6 +132,9 @@
                                 <div class="col-12 col-sm-6 py-2 py-xl-3">
                                     <input v-model="form.federative_entity" type="text" name="federative_entity" placeholder="Estado*" class="input full-width">        
                                 </div>
+                                <div class="col-12 col-sm-12 py-2 py-xl-3">
+                                    <textarea v-model="form.message" type="text" name="message" placeholder="Deja aqui tu mensaje" class="input full-width">   </textarea>     
+                                </div>
                                 <div class="col-12 d-flex justify-content-end align-items-center pt-4 pt-xl-5">
                                     <button @click="sendMail()" class="btn btn-light">
                                         <span class="hc--description-sm">
@@ -223,7 +226,7 @@
     
 	// jQuery
     import $ from 'jquery'
-    var CONFIG = require('../page.config.js')
+    var CONFIG = require('../page.config.js')/* eslint-disable */
 	export default {
 		name: 'hc_home',
 		data() {

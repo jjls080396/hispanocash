@@ -217,8 +217,10 @@
                                         </div>
                                         <div class="mb-2">
                                             <span class="hc--description text-white">
-                                                Te recordamos el recibo será <br class="d-none d-md-flex">
-                                                enviado a tu correo electrónico
+                                                Su pago se ha realizado con éxito con el folio: <br class="d-none d-md-flex">
+                                                <span class="hc--title poppins-bold text-black">
+                                                    {{this.folio_payment}}
+                                                </span>
                                             </span> 
                                         </div>
                                         <div class="mb-2">
@@ -301,7 +303,7 @@
                 reference_payment_data: null,
                 show_modal: false,
                 modal_state: null,
-
+                folio_payment:null,
                 data_user: null,
                 url_payment: null
 			}
@@ -388,7 +390,7 @@
 
             async paymentReference() {
 
-                if(this.amount == null || this.amount <= 0 || isNaN(this.amount)) {
+                if(this.amount == null || this.amount < 15 || isNaN(this.amount)) {
                     _Store.commit('setAlert', {
                         open: true,
                         message: 'Debes ingresar un monto a pagar válido. El monto mínimo es de $15 USD',
@@ -506,6 +508,7 @@
                         //this.modal_state = 'error'
                         if(response['status'] == 'complete' && response['payment_status'] == 'paid') {
                             this.modal_state = 'success'
+                            this.folio_payment = response['folio']
                         }
                         else {
                             this.modal_state = 'error'
@@ -541,15 +544,11 @@
                 let sm_height = $('#section_modal').height()
                 $("#sm_target").css("height", sm_height)
             })
-
             //console.log(this.$route.params.make_payment)
-
             if(this.$route.params.make_payment) {
                 this.checkStatusPayment()
             }
-            if(this.$route.params.code) {
-                alert("QR CODE CALLED")
-            }
+           
 
             _Store.commit('setLoad', {
                 show: true,

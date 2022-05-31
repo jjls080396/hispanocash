@@ -197,7 +197,7 @@
                 }).then(res => res.json())
                 .catch(error => console.error('Error:', error))
                 .then(async response => {
-                    //console.log('Success:', response)
+                    console.log('Success LOGIN RESPONSE: ', response)
 
                     if(response['access_token'] !== undefined) {
                         await _Store.dispatch('createSession', response)

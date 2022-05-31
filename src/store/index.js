@@ -66,7 +66,7 @@ export default new Vuex.Store({
 			current_sesion = JSON.parse(current_sesion)
 			
 			current_sesion.authorization_id = new_authorization_id
-			console.log(current_sesion, 'current_sesion')
+			console.log(current_sesion, 'current_sesion with auth')
 			localStorage.setItem('HISPANO@session', JSON.stringify(current_sesion))
 		},
 		setAlert: (state, new_alert) => {
@@ -112,6 +112,10 @@ export default new Vuex.Store({
 			//console.log(localStorage.getItem('HISPANO@session'))
 			return localStorage.getItem('HISPANO@session')
 		},
+		sessionPABS: () => {
+			//console.log(localStorage.getItem('HISPANO@session'))
+			return localStorage.getItem('SISTEMAS@PABS')
+		},
 		deleteSession: () => {
 			//console.log(localStorage.getItem('HISPANO@session'))
 			localStorage.setItem('HISPANO@session', null)
@@ -125,6 +129,7 @@ export default new Vuex.Store({
 			commit('setReferencePaymentData', reference_payment_data)
 		},
 		saveAuthorizationID: ({commit}, authorization_id) => {
+			console.log('guarda authorization_id',authorization_id)
 			commit('setAuthorizationID', authorization_id)
 		}
 	},
