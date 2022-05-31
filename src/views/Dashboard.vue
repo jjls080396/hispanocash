@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
                                     <input id="input_1" v-model="amount" type="" name="" class="input full-width" style="padding-left: 30px;">
-                                    <p style="font-size: 12px;color: red;">Monto mínimo de $15 USD</p>
+                                    <p style="font-size: 12px;color: red;">Monto mínimo de $15 USD.</p>
                                 </div>
                             </div>
 
