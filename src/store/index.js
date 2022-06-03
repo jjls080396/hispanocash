@@ -16,8 +16,13 @@ export default new Vuex.Store({
 		loading: {
 			show: false,
 			title: 'Cargando',
-			subtitle: 'un momento...'
+			subtitle: 'un momento...',
+			stopTimer:false,
+			tiempo: null
 		},
+		validating:{
+			response: true
+		}
 	},
 	getters: {
 		getLang: state => {
@@ -36,6 +41,9 @@ export default new Vuex.Store({
 		},
 		getLoad: (state) => {
 			return state.loading
+		},
+		getValidating: (state) => {
+			return state.validating
 		}
 	},
 	mutations: {
@@ -93,6 +101,19 @@ export default new Vuex.Store({
 					state.loading.show = false
 				}, state.loading.timeout)
 			}
+		},
+		setValidatingResponse: (state,data) => {
+			state.validating.response = data.response
+		},
+		setDataPayment: (state, new_data) => {
+			let current_sesion = localStorage.getItem('HISPANO@session')
+			current_sesion = JSON.parse(current_sesion)
+			
+			current_sesion.amount_service = new_data.amount
+			current_sesion.reference_service = new_data.reference
+			current_sesion.name_service = new_data.service
+			current_sesion.carrier_service = new_data.code_service
+			localStorage.setItem('HISPANO@session', JSON.stringify(current_sesion))
 		}
 	},
 	actions: {
@@ -131,6 +152,9 @@ export default new Vuex.Store({
 		saveAuthorizationID: ({commit}, authorization_id) => {
 			console.log('guarda authorization_id',authorization_id)
 			commit('setAuthorizationID', authorization_id)
+		},
+		saveDataPayment: ({commit}, payment) => {
+			commit('setDataPayment', payment)
 		}
 	},
 	modules: {

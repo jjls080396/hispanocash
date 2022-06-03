@@ -32,7 +32,7 @@ const routes = [
         component: () => import('../views/PaymentServices.vue')
     },
     {
-        path: '/inicio_de_sesion',
+        path: '/inicio_de_sesion/:service',
         name: 'login',
         component: () => import('../views/Login.vue')
     },
@@ -109,6 +109,18 @@ const routes = [
             // the function receives the target route as the argument
             // we return a redirect path/location here.
             return { name: 'dashboardPay', params: { make_payment: true } }
+        },
+        /* eslint-enable */
+        
+    },
+    {
+        path: '/stripe/success_services',
+        name:'success_services',
+        /* eslint-disable */
+        redirect: to => {
+            // the function receives the target route as the argument
+            // we return a redirect path/location here.
+            return { name: 'dashboard', params: { make_payment_service: true } }
         },
         /* eslint-enable */
         

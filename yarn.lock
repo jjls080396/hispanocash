@@ -2002,6 +2002,11 @@
   "resolved" "https://registry.npmmirror.com/at-least-node/-/at-least-node-1.0.0.tgz"
   "version" "1.0.0"
 
+"atob@^2.1.2":
+  "integrity" "sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg=="
+  "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
+  "version" "2.1.2"
+
 "autoprefixer@^10.2.4", "autoprefixer@10.4.5":
   "integrity" "sha512-Fvd8yCoA7lNX/OUllvS+aS1I7WRBclGXsepbvT8ZaPgrH24rgXpZzF0/6Hh3ZEkwg+0AES/Osd196VZmYoEFtw=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.5.tgz"
@@ -2221,6 +2226,14 @@
   dependencies:
     "base64-js" "^1.3.1"
     "ieee754" "^1.1.13"
+
+"bukwild-stylus-library@^3.1.0":
+  "integrity" "sha512-MgaFjTgd0oJO2dwOTzKMig0bSMjzqndhNOCkV05rsPoNlmY/8weCdWFVWUwujGWMTdgRqYsa+oVjGy76KGBwLA=="
+  "resolved" "https://registry.npmjs.org/bukwild-stylus-library/-/bukwild-stylus-library-3.2.1.tgz"
+  "version" "3.2.1"
+  dependencies:
+    "stylus-easing" "^1"
+    "stylus-type-utils" "^0"
 
 "bytes@3.0.0":
   "integrity" "sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw=="
@@ -2764,6 +2777,15 @@
   "resolved" "https://registry.npmmirror.com/css-what/-/css-what-6.1.0.tgz"
   "version" "6.1.0"
 
+"css@^3.0.0":
+  "integrity" "sha512-DG9pFfwOrzc+hawpmqX/dHYHJG+Bsdb0klhyi1sDneOgGOXy9wQIC8hzyVp1e4NRYDBdxcylvywPkkXCHAzTyQ=="
+  "resolved" "https://registry.npmjs.org/css/-/css-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "inherits" "^2.0.4"
+    "source-map" "^0.6.1"
+    "source-map-resolve" "^0.6.0"
+
 "cssesc@^3.0.0":
   "integrity" "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg=="
   "resolved" "https://registry.npmmirror.com/cssesc/-/cssesc-3.0.0.tgz"
@@ -2870,6 +2892,11 @@
   "integrity" "sha1-9lNNFRSCabIDUue+4m9QH5oZEpA="
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   "version" "1.2.0"
+
+"decode-uri-component@^0.2.0":
+  "integrity" "sha512-hjf+xovcEn31w/EUYdTXQh/8smFL/dzYjohQGEIgjyNavaJfBY2p5F527Bo1VPATxv0VYTUC2bOcXvqFwk78Og=="
+  "resolved" "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz"
+  "version" "0.2.0"
 
 "deep-is@^0.1.3":
   "integrity" "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="
@@ -3757,7 +3784,7 @@
   "resolved" "https://registry.npmmirror.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz"
   "version" "0.4.1"
 
-"glob@^7.0.0", "glob@^7.0.3", "glob@^7.1.2", "glob@^7.1.3", "glob@^7.1.4":
+"glob@^7.0.0", "glob@^7.0.3", "glob@^7.1.2", "glob@^7.1.3", "glob@^7.1.4", "glob@^7.1.6":
   "integrity" "sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q=="
   "resolved" "https://registry.npmmirror.com/glob/-/glob-7.2.3.tgz"
   "version" "7.2.3"
@@ -4673,7 +4700,7 @@
   "resolved" "https://registry.npmmirror.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@~4.17.10":
+"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@~4.17.10", "lodash@3 - 4":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -6355,6 +6382,11 @@
     "klona" "^2.0.4"
     "neo-async" "^2.6.2"
 
+"sax@~1.2.4":
+  "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="
+  "resolved" "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
+  "version" "1.2.4"
+
 "schema-utils@^2.6.5":
   "integrity" "sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg=="
   "resolved" "https://registry.npmmirror.com/schema-utils/-/schema-utils-2.7.1.tgz"
@@ -6622,6 +6654,14 @@
   "resolved" "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz"
   "version" "1.0.2"
 
+"source-map-resolve@^0.6.0":
+  "integrity" "sha512-KXBr9d/fO/bWo97NXsPIAW1bFSBOuCnjbNTBMO7N59hsv5i9yzRDfcYwwt0l04+VqnKC+EwzvJZIP/qkuMgR/w=="
+  "resolved" "https://registry.npmjs.org/source-map-resolve/-/source-map-resolve-0.6.0.tgz"
+  "version" "0.6.0"
+  dependencies:
+    "atob" "^2.1.2"
+    "decode-uri-component" "^0.2.0"
+
 "source-map-support@~0.5.20":
   "integrity" "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w=="
   "resolved" "https://registry.npmmirror.com/source-map-support/-/source-map-support-0.5.21.tgz"
@@ -6636,6 +6676,11 @@
   "version" "0.6.1"
 
 "source-map@^0.7.1":
+  "integrity" "sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ=="
+  "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz"
+  "version" "0.7.3"
+
+"source-map@^0.7.3":
   "integrity" "sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ=="
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz"
   "version" "0.7.3"
@@ -6909,6 +6954,27 @@
     "table" "^6.6.0"
     "v8-compile-cache" "^2.3.0"
     "write-file-atomic" "^3.0.3"
+
+"stylus-easing@^1":
+  "integrity" "sha1-G6MXeQOj08lgXIPr9x8Ylbm55aE="
+  "resolved" "https://registry.npmjs.org/stylus-easing/-/stylus-easing-1.0.0.tgz"
+  "version" "1.0.0"
+
+"stylus-type-utils@^0":
+  "integrity" "sha1-8EgzRyi7UUTs1ZnGJ1U9tk6gprs="
+  "resolved" "https://registry.npmjs.org/stylus-type-utils/-/stylus-type-utils-0.0.3.tgz"
+  "version" "0.0.3"
+
+"stylus@*", "stylus@0.x":
+  "integrity" "sha512-AYiCHm5ogczdCPMfe9aeQa4NklB2gcf4D/IhzYPddJjTgPc+k4D/EVE0yfQbZD43MHP3lPy+8NZ9fcFxkrgs/w=="
+  "resolved" "https://registry.npmjs.org/stylus/-/stylus-0.58.1.tgz"
+  "version" "0.58.1"
+  dependencies:
+    "css" "^3.0.0"
+    "debug" "^4.3.2"
+    "glob" "^7.1.6"
+    "sax" "~1.2.4"
+    "source-map" "^0.7.3"
 
 "sugarss@^2.0.0":
   "integrity" "sha512-WfxjozUk0UVA4jm+U1d736AUpzSrNsQcIbyOkoE364GrtWmIrFdk5lksEupgWMD4VaT/0kVx1dobpiDumSgmJQ=="
@@ -7375,6 +7441,14 @@
   "resolved" "https://registry.npmmirror.com/vue-router/-/vue-router-3.5.4.tgz"
   "version" "3.5.4"
 
+"vue-ssr-carousel@^1.4.0":
+  "integrity" "sha512-d9e3rL+gQYBep/QVIErmZSoRd0JARtVRVnVigHizS9aVA8GzANefu4SkigpLzN5rIxHfZYicWtFDLDzjmPrKRg=="
+  "resolved" "https://registry.npmjs.org/vue-ssr-carousel/-/vue-ssr-carousel-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "bukwild-stylus-library" "^3.1.0"
+    "lodash" "3 - 4"
+
 "vue-style-loader@^4.1.0", "vue-style-loader@^4.1.3":
   "integrity" "sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg=="
   "resolved" "https://registry.npmmirror.com/vue-style-loader/-/vue-style-loader-4.1.3.tgz"
@@ -7409,6 +7483,11 @@
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"
+
+"vuejs-text-logger@^0.0.6":
+  "integrity" "sha512-c6sh0tiMlFdNDRDKQYEZGOEZSPvbEWi+bksqI+XsGalLYxZP/Cr27+YCGIgRQcVghS5oLcq7d9mArwGRswt0pQ=="
+  "resolved" "https://registry.npmjs.org/vuejs-text-logger/-/vuejs-text-logger-0.0.6.tgz"
+  "version" "0.0.6"
 
 "vuex@3":
   "integrity" "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw=="

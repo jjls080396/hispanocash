@@ -88,7 +88,7 @@
                             <div class="row d-flex justify-content-end align-items-center">
                                 <div class="col-12 text-center py-3 px-0">
                                     <span class="hc--title-sm poppins-bold">
-                                        Historial de pagos
+                                        Historial de pagos PABS
                                     </span>
                                 </div>
 
@@ -133,6 +133,110 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                                <div class="row d-flex justify-content-end align-items-center">
+                                <div class="col-12 text-center py-3 px-0">
+                                    <span class="hc--title-sm poppins-bold">
+                                        Historial de pagos de servicios
+                                    </span>
+                                </div>
+
+                                <div class="table-responsive col-12 py-3 px-0">
+                                    <table class="table bg-white hc--rounded-12">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th class="py-4" scope="col">SERVICIO</th>
+                                                <th class="py-4" scope="col">NO. REFERECNIA</th>
+                                                <th class="py-4" scope="col">MONTO(PESOS MEXICANOS)</th>
+                                                <th class="py-4" scope="col">MONTO(DOLARES)</th>
+                                                <th class="py-4" scope="col">FECHA DE PAGO</th>
+                                                <th class="py-4" scope="col">MÉTODO DE PAGO</th>
+                                                <th class="py-4" scope="col">FOLIO</th>
+                                                <th class="py-4" style="width:200px" scope="col">ESTATUS PAGO</th>
+                                                <th class="py-4" scope="col">ACCIONES</th>
+                                                
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr class="text-center" v-for="(row, index_row) in data_table_services" :key="index_row" >
+                                                <template v-if="row.payment_concept == 'services' &  row.status_taecel === 'pending' ">
+                                                    <th scope="row" class="align-middle" >
+                                                        {{ row.soft_descriptor }}
+                                                    </th>
+                                                    <td class="align-middle" >
+                                                        {{ row.reference_id }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        ${{ row.amount_value_mx.toFixed(2) }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        ${{ row.amount_value }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.create_time }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.payment_platform }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.folio }}
+                                                    </td>
+                                                    <td class="" >
+
+                                                        <b class="d-flex justify-content-between align-items-center">
+                                                            Pendiente
+                                                        <b-icon icon="exclamation-triangle-fill" scale="1.2" variant="warning"></b-icon>
+                                                        
+                                                        </b>
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        <button class="btn btn-primary" v-on:click="getStatusPay(row.trans_id_taecel,row.folio)">CONSULTAR</button>
+                                                    </td>
+                                                </template>
+                                                <template v-else-if="row.payment_concept == 'services' &  row.status_taecel === 'success'">
+                                                    <th scope="row" class="align-middle" >
+                                                        {{ row.soft_descriptor }}
+                                                    </th>
+                                                    <td class="align-middle" >
+                                                        {{ row.reference_id }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        ${{ row.amount_value_mx.toFixed(2) }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        ${{ row.amount_value }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.create_time }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.payment_platform }}
+                                                    </td>
+                                                    <td class="align-middle" >
+                                                        {{ row.folio }}
+                                                    </td>
+                                                    <td class="" >
+                                                        
+                                                        <b class="d-flex justify-content-between align-items-center">
+                                                            Exitoso
+                                                        <b-icon icon="check-square" scale="1.2" variant="success"></b-icon>
+                                                        </b>
+                                                       
+                                                    </td>   
+                                                    <td class="align-middle" >
+                                                        <button class="btn btn-primary" disabled >CONSULTAR</button>
+                                                    </td>   
+                                                </template>
+                                                
+
+                                                
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
                                 <div class="col-12 d-flex justify-content-end align-items-start py-3">
                                     <button @click="redirect('dashboard')" class="btn btn-success">
@@ -181,7 +285,42 @@
                 code: null,
                 show_data: false,
 
-                data_table: []
+                data_table: [],
+                data_table_services:[],
+                pagos_servicios: [
+                        {
+                            "transId":"220401881043",
+                            "amount":"20",
+                            "service":"SKY",
+                            "status":"2",
+                            "reference":"12332154654658",
+                            "date":"2022-01-20"
+                        },
+                        {
+                            "transId":"888888888",
+                            "amount":"399",
+                            "service":"TELMEX",
+                            "status":"3",
+                            "reference":"6589745213",
+                            "date":"2022-01-24"
+                        },
+                        {
+                            "transId":"666611111",
+                            "amount":"220",
+                            "service":"Megacable",
+                            "status":"3",
+                            "reference":"9854123547",
+                            "date":"2022-04-25"
+                        },
+                        {
+                            "transId":"9999211111",
+                            "amount":"20",
+                            "service":"Izzi",
+                            "status":"2",
+                            "reference":"4578326541",
+                            "date":"2022-01-20"
+                        }
+                ]
 			}
 		},
         computed: {
@@ -215,6 +354,111 @@
                 await _Store.dispatch('deleteSession')
                 this.redirect('login')
             },
+            
+ async getStatusPay(idTransaction,folio) {
+     console.log(idTransaction,folio)
+      let session = JSON.parse(await _Store.dispatch('existSession'))
+      var estatus = null
+    //     var params = {
+    //             'key': `${CONFIG.server[CONFIG.env].get_services.api_key}`,
+    //             'nip': `${CONFIG.server[CONFIG.env].get_services.api_nip}`,
+    //             'transID': idTransaction
+    //     }
+
+    //     var formBody = []
+    //     for (var property in params) {
+    //             var encodedKey = encodeURIComponent(property)
+    //             var encodedValue = encodeURIComponent(params[property])
+    //             formBody.push(encodedKey + "=" + encodedValue)
+    //     }
+    //     formBody = formBody.join("&")
+    //     // console.log(formBody)
+
+    //     _Store.commit('setLoad', {
+    //             show: true,
+    //             title: 'Cargando',
+    //             subtitle: `Actualizando estatus del pago ${idTransaction}`,
+    //             timeout: 100000
+    //     })
+
+    //     fetch(`${CONFIG.server[CONFIG.env].get_services.url_taecel_status}`, {
+    //                     method: 'POST',
+    //                     headers: {
+    //                             'Content-Type': 'application/x-www-form-urlencoded'
+    //                     },
+    //                     body: formBody
+    //             })
+    //             .then(res => res.json())
+    //             .catch(err => {
+    //                     console.error(err)
+    //             })
+    //             .then(async response => {
+    //                     if (response['success'] == false) {
+    //                             _Store.commit('setAlert', {
+    //                                     open: true,
+    //                                     message: 'Ocurrio un error al realizar la solicitud, favor de intentarlo nuevamente mas tarde.',
+    //                                     variant: 'danger'
+    //                             })
+    //                             _Store.commit('setLoad', {
+    //                                     show: false
+    //                             })
+    //                             return
+    //                     } else {
+
+                                estatus = 'success'/*response['success'] == true && response['data'].Status == 'Exitosa' ? 'success' : 'pending'*/
+    //                                     // actualizar documento con transId
+                                        fetch(`${CONFIG.server[CONFIG.env].api}/transactions/update-transaction-field?folio=${folio}&field=status_taecel&value=${estatus}`, {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                    'authorization': `BEARER ${session.access_token}`
+                                                }
+                                                })
+                                                .then(res => res.json())
+                                                .catch(err => {
+                                                        console.error(err)
+                                                })
+                                                .then(async resp => {
+                                                        _Store.commit('setLoad', {
+                                                                show: false
+                                                        })
+                                                        _Store.commit('setAlert', {
+                                                                open: true,
+                                                                message: 'Estatus Actualizado correctamente',
+                                                                timeout: 3000
+                                                        })
+                                                        console.log(resp)
+                                                        fetch(`${CONFIG.server[CONFIG.env].api}/transactions/?status=COMPLETED`, {
+                                                            method: 'GET',
+                                                            headers: {
+                                                                'Accept': 'application/json, text/plain, /',
+                                                                'Content-Type': 'application/json',
+                                                                'Authorization': `BEARER ${session.access_token}`
+                                                            }
+                                                        }).then(res => res.json())
+                                                        .catch(error => console.error('Error:', error))
+                                                        .then(async response => {
+                                                            if(response.length > 0) {
+                                                                this.data_table_services = response
+                                                                console.log('actualizado',response)
+                                                                console.log(this.currentDateTime())
+                                                            }
+                                                        })
+                                                        
+                                                })
+    //                     }
+    //             })
+
+},
+
+            currentDateTime() {
+            const current = new Date();
+            const date = current.getFullYear()+'-'+( current.getMonth()+1).toString().padStart(2,'0')+'-'+current.getDate().toString().padStart(2,'0');
+            const time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+            const dateTime = date +' '+ time;
+
+            return dateTime;
+            },
         },
         async created() {
             $(window).resize(function() {
@@ -244,10 +488,47 @@
             .catch(error => console.error('Error:', error))
             .then(async response => {
 
-                //console.log('Success:', response)
+                console.log('Success:', response)
 
                 if(response.length > 0) {
                     this.data_table = response
+                    // Test
+                    // this.data_table[0].status = 'FAILED'
+                }
+                else if(response['detail'] !== undefined) {
+                    if(response['detail'] == "Unauthorized") {
+                        _Store.commit('setAlert', {
+                            open: true,
+                            message: 'La sesión ha expirado',
+                            variant: 'danger'
+                        })
+                        console.log("llamada de logout desde created HistoryPayments.VUE ")
+                        this.logout()
+                    }
+                }
+
+                
+
+                _Store.commit('setLoad', {
+                    show: false,
+                })
+            })
+
+            fetch(`${CONFIG.server[CONFIG.env].api}/transactions/?status=COMPLETED`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json, text/plain, /',
+                    'Content-Type': 'application/json',
+                    'Authorization': `BEARER ${session.access_token}`
+                }
+            }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(async response => {
+
+                console.log('Success:', response)
+
+                if(response.length > 0) {
+                    this.data_table_services = response
                     // Test
                     // this.data_table[0].status = 'FAILED'
                 }
@@ -267,6 +548,7 @@
                     show: false,
                 })
             })
+
         },
         mounted() {
             for(let time = 0; time < 2000; time = time + 100) {

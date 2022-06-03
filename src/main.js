@@ -10,6 +10,11 @@ import { BootstrapVue, IconsPlugin, BootstrapVueIcons } from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 //import CustomCss from './css/custom.css'
 import  './css/custom.css'
+import SsrCarousel from 'vue-ssr-carousel'
+import ssrCarouselCss from 'vue-ssr-carousel/index.css'
+Vue.component('ssr-carousel',SsrCarousel)
+//Vue.component('slide-fast',Slide)
+Vue.component(ssrCarouselCss)
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
